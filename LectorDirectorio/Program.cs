@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-string directorio = "";
+﻿string directorio = "";
 
 while (true)
 {
