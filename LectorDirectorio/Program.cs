@@ -23,7 +23,7 @@ foreach (string carpeta in carpetas)
 string[] archivos = Directory.GetFiles(directorio);
 List<string> ArchivoCSV = new List<string>()
 {
-    "Nombre del Archivo,Tamaño (KB),Fecha de Ultima Modificacion"
+    "Nombre del Archivo;Tamaño (KB);Fecha de Ultima Modificacion"
 };
 Console.WriteLine("-------------ARCHIVOS-------------\nNombre Archivo  -  Tamanio (KB)");
 foreach (string archivo in archivos)
@@ -33,7 +33,7 @@ foreach (string archivo in archivos)
     double tamaArchivo = Math.Round(datosArchivo.Length/1024.0,2);
     DateTime fechaModificacionArchivo = datosArchivo.LastWriteTime;
     Console.WriteLine($"{nombreArchivo}  -  {tamaArchivo} KB");
-    string lineaCSV = $"{nombreArchivo},{tamaArchivo:F2},{fechaModificacionArchivo}";
+    string lineaCSV = $"{nombreArchivo};{tamaArchivo:F2};{fechaModificacionArchivo}";
     ArchivoCSV.Add(lineaCSV);
 }
     string rutaCombinar = Path.Combine(directorio,"Reporte.csv");
